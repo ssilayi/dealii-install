@@ -101,7 +101,7 @@ if test -f "$TGZ" ; then
         echo "Source directory found (remove it to unpack anew)"
     else
         echo -n "Unpacking... "
-        tar -xvz -f -o "$TGZ" -C "$UNPACK" >/dev/null
+        tar -xvz -f  "$TGZ" --no-same-owner -C "$UNPACK" >/dev/null
         echo "done"
     fi
     SRCDIR=$UNPACK/$DIR
